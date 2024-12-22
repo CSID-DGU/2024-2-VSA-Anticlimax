@@ -1,0 +1,1 @@
+export type SideBarPage = 'article' | 'question';
