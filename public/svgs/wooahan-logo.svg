@@ -1,0 +1,22 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="home-logo" clip-path="url(#clip0_1724_3222)">
+<g id="Group 20760">
+<rect id="Rectangle 1146" width="28.6443" height="16.258" rx="8.12902" transform="matrix(0.707107 0.707107 0.707107 -0.707107 -2.98853 18.4971)" fill="url(#paint0_linear_1724_3222)"/>
+<rect id="Rectangle 1145" x="42.6508" y="13.3584" width="35.9109" height="16.258" rx="8.12902" transform="rotate(135 42.6508 13.3584)" fill="url(#paint1_linear_1724_3222)"/>
+<rect id="Rectangle 1144" x="21.2745" y="15.5449" width="10.4892" height="2.30162" rx="1.15081" transform="rotate(46.3 21.2745 15.5449)" fill="#92B2FF" fill-opacity="0.4"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1724_3222" x1="4.01012" y1="13.2188" x2="24.9685" y2="3.22602" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C1D2FF"/>
+<stop offset="1" stop-color="#5186FF"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1724_3222" x1="58.8376" y1="29.4314" x2="58.8376" y2="12.9805" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5186FF"/>
+<stop offset="1" stop-color="#1954EA"/>
+</linearGradient>
+<clipPath id="clip0_1724_3222">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+</svg>
