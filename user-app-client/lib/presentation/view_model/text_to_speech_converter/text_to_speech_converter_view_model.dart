@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:wooahan/core/wrapper/state_wrapper.dart';
 import 'package:wooahan/domain/condition/analysis/analysis_document_condition.dart';
 import 'package:wooahan/domain/condition/correction/correct_document_text_condition.dart';
@@ -14,7 +14,8 @@ class TextToSpeechConverterViewModel extends GetxController {
   /* ------------------------------------------------------ */
   /* DI Fields -------------------------------------------- */
   /* ------------------------------------------------------ */
-  late final FlutterTts _textToSpeech;
+  late final AudioPlayer _audioPlayer;
+  late final String _speechFilePath;
 
   late final PageController pageController;
 
@@ -50,7 +51,7 @@ class TextToSpeechConverterViewModel extends GetxController {
   void onInit() {
     super.onInit();
 
-    _textToSpeech = FlutterTts();
+    _audioPlayer = AudioPlayer();
 
     pageController = PageController(initialPage: 0);
 
@@ -67,19 +68,23 @@ class TextToSpeechConverterViewModel extends GetxController {
   }
 
   @override
-  void onReady() async {
+  void onReady() {
     super.onReady();
 
-    _textToSpeech.setLanguage("ko-KR");
-    _textToSpeech.setSpeechRate(0.5);
-    _textToSpeech.setVolume(0.6);
-    _textToSpeech.setPitch(1);
+    // 끝났을 때 상태 변경
+    _audioPlayer.playerStateStream.listen((event) {
+      if (event.processingState == ProcessingState.completed) {
+        _audioPlayer.seek(const Duration(seconds: 0));
+        _isSpeaking.value = false;
+      }
+    });
+  }
 
-    await _textToSpeech.setVoice(
-      {
-        "identifier": "com.apple.voice.compact.ko-KR.Yuna",
-      },
-    );
+  @override
+  void dispose() {
+    super.dispose();
+
+    _audioPlayer.dispose();
   }
 
   void takePicture() async {
@@ -103,13 +108,16 @@ class TextToSpeechConverterViewModel extends GetxController {
     );
 
     if (beforeResult.success) {
-      StateWrapper<String> afterResult =
+      StateWrapper<Map<String, String>> afterResult =
           await _correctDocumentTextUsecase.execute(
         CorrectDocumentTextCondition(content: beforeResult.data!),
       );
 
       if (afterResult.success) {
-        _analysisResult.value = afterResult.data!;
+        _analysisResult.value = afterResult.data!['text']!;
+        _speechFilePath = afterResult.data!['urlPath']!;
+
+        await _audioPlayer.setUrl(_speechFilePath);
       }
     }
 
@@ -127,11 +135,12 @@ class TextToSpeechConverterViewModel extends GetxController {
     _isFirstSpeaking.value = false;
     _isSpeaking.value = !_isSpeaking.value;
 
-    _textToSpeech.speak(_analysisResult.value);
+    _audioPlayer.play();
   }
 
   void pauseSpeaking() async {
-    await _textToSpeech.stop();
+    await _audioPlayer.stop();
+    await _audioPlayer.seek(const Duration(seconds: 0));
 
     _isSpeaking.value = !_isSpeaking.value;
   }

@@ -26,7 +26,7 @@ abstract class BaseConnect extends GetConnect {
 
     httpClient
       ..baseUrl = apiServerUrl
-      ..defaultContentType = 'application/json; charset=utf-8'
+      ..defaultContentType = defaultContentType
       ..timeout = const Duration(seconds: 10);
 
     httpClient.addRequestModifier<dynamic>((request) {
@@ -50,7 +50,7 @@ abstract class BaseConnect extends GetConnect {
     httpClient.addResponseModifier((request, Response response) async {
       if (response.status.hasError) {
         LogUtil.error(
-          "🚨 [${request.method}] ${request.url} | END (${response.body['error']['code']}, ${response.body['error']['message']}, ${response.body['error']['fields']})",
+          "🚨 [${request.method}] ${request.url} | END (${response.body})",
         );
 
         await _isExpiredTokens(

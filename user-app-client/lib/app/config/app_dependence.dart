@@ -16,6 +16,8 @@ import 'package:wooahan/data/provider/correction/correction_remote_provider.dart
 import 'package:wooahan/data/provider/correction/correction_remote_provider_impl.dart';
 import 'package:wooahan/data/provider/drug/drug_remote_provider.dart';
 import 'package:wooahan/data/provider/drug/drug_remote_provider_impl.dart';
+import 'package:wooahan/data/provider/generation/generation_remote_provider.dart';
+import 'package:wooahan/data/provider/generation/generation_remote_provider_impl.dart';
 import 'package:wooahan/data/provider/medication/medication_remote_provider.dart';
 import 'package:wooahan/data/provider/medication/medication_remote_provider_impl.dart';
 import 'package:wooahan/data/provider/question/question_remote_provider.dart';
@@ -32,6 +34,7 @@ import 'package:wooahan/data/repository/auth/auth_repository_impl.dart';
 import 'package:wooahan/data/repository/comment/comment_repository_impl.dart';
 import 'package:wooahan/data/repository/correction/correction_repository_impl.dart';
 import 'package:wooahan/data/repository/drug/drug_repository_impl.dart';
+import 'package:wooahan/data/repository/generation/generation_repository_impl.dart';
 import 'package:wooahan/data/repository/medication/medication_repository_impl.dart';
 import 'package:wooahan/data/repository/question/question_repository_impl.dart';
 import 'package:wooahan/data/repository/schedule/schedule_repository_impl.dart';
@@ -45,6 +48,7 @@ import 'package:wooahan/domain/repository/auth/auth_repository.dart';
 import 'package:wooahan/domain/repository/comment/comment_repository.dart';
 import 'package:wooahan/domain/repository/correction/correction_repository.dart';
 import 'package:wooahan/domain/repository/drug/drug_repository.dart';
+import 'package:wooahan/domain/repository/generation/generation_repository.dart';
 import 'package:wooahan/domain/repository/medication/medication_repository.dart';
 import 'package:wooahan/domain/repository/question/question_repository.dart';
 import 'package:wooahan/domain/repository/schedule/schedule_repository.dart';
@@ -62,6 +66,7 @@ class AppDependency extends Bindings {
     Get.lazyPut<AnalysisRemoteProvider>(() => AnalysisRemoteProviderImpl());
 
     Get.lazyPut<CorrectionRemoteProvider>(() => CorrectionRemoteProviderImpl());
+    Get.lazyPut<GenerationRemoteProvider>(() => GenerationRemoteProviderImpl());
 
     Get.lazyPut<AuthProvider>(() => AuthProviderImpl());
     Get.lazyPut<AccountRemoteProvider>(() => AccountRemoteProviderImpl());
@@ -80,6 +85,7 @@ class AppDependency extends Bindings {
     Get.lazyPut<AnalysisRepository>(() => AnalysisRepositoryImpl());
 
     Get.lazyPut<CorrectionRepository>(() => CorrectionRepositoryImpl());
+    Get.lazyPut<GenerationRepository>(() => GenerationRepositoryImpl());
 
     Get.lazyPut<AuthRepository>(() => AuthRepositoryImpl());
     Get.lazyPut<AccountRepository>(() => AccountRepositoryImpl());
