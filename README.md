@@ -9,7 +9,8 @@
 
 두 번째, 또한, 인터넷 상에서 제공되는 건강 정보는 많지만, 시니어들이 해당 정보를 선별하여 신뢰할 수 있는 자료를 찾는 것이 어려운 현실이다. 정보가 지나치게 많거나, 광고성 콘텐츠로 가득 찬 정보들은 시니어들이 올바른 결정을 내리는 데 방해가 된다.
 
-<br/>
+### 프로젝트 영상
+https://github.com/user-attachments/assets/3ebc02de-354d-44ab-8ddb-98c82ce2b251
 
 ### 기술 스택
 | **Category** | **Stack** |
@@ -17,8 +18,6 @@
 | **FrontEnd** | `TypeScript`, `Dart`, `React`, `Next.js`, `Flutter` |
 | **BackEnd** | `Java 17`, `Python`, `Spring`, `Django`, `LangChain`, `MySQL`, `Redis` |
 | **DevOps** | `Git Action`, `Docker`, `NCP` |
-
-<br/>
 
 ### 팀원
 | **Name** | **Position** |
