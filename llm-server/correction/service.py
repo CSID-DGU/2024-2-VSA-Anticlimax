@@ -50,6 +50,7 @@ class CorrectionService:
                 - Consider grammar, vocabulary, and context comprehensively during correction.
                 - Apply appropriate honorifics and formal language.
                 - Absolutely do not add any additional information or sentences beyond the corrected content.
+                - When labeling numbers such as 01, 02, or 1, 2, please denote them as '첫번째,' '두번째,' and so on.
                 """
             ),
             HumanMessagePromptTemplate.from_template(
