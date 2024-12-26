@@ -28,7 +28,13 @@ const ReadDrugList = ({
         if (drugs.length > 0) {
             setTimeout(() => {
                 setIsInitialLoading(false);
-            }, 2000);
+            }, 1000);
+        } else {
+            const timeout = setTimeout(() => {
+                setIsInitialLoading(false);
+            }, 3000);
+
+            return () => clearTimeout(timeout);
         }
     }, [drugs]);
 

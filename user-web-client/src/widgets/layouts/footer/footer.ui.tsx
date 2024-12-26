@@ -26,26 +26,16 @@ export default function Footer() {
                     </a>
                 </div>
                 <div className="text-center text-sub3 leading-relaxed desktop:text-left">
-                    <ViewpamLogo className="mb-5" />
                     <div className="flex flex-col gap-1">
                         <p>
-                            <TranslatedText text="회사명 : 주식회사 뷰팜" />{' '}
+                            <TranslatedText text="회사명 : 우아한" />{' '}
                             <Separator />{' '}
-                            <TranslatedText text="대표자 : 김경모" />{' '}
+                            <TranslatedText text="대표자 : 손형준" />{' '}
                             <Separator />{' '}
                             <TranslatedText text="개인정보보호책임자 : 서희찬" />{' '}
-                            <Separator />{' '}
-                            <TranslatedText text="사업자등록번호 : 637-87-03377" />
                         </p>
                         <p>
-                            <TranslatedText text="주소 : 충북 청주시 흥덕구 오송읍 오송생명1로 194-25, 3층 A-14" />{' '}
-                            <Separator />{' '}
-                            <TranslatedText text="입금계좌 : 우리은행 / 1005-604-708704" />{' '}
-                            <Separator />{' '}
-                            <TranslatedText text="이메일 : contact@viewpam.com" />
-                        </p>
-                        <p>
-                            <TranslatedText text="*뷰팜에서 제공하는 모든 콘텐츠는 저작권법 보호를 받으며, 무단으로 복제 및 배포하는 경우 저작권법에 의해 처벌 받을 수 있습니다." />
+                            <TranslatedText text="*우아한에서 제공하는 모든 콘텐츠는 저작권법 보호를 받으며, 무단으로 복제 및 배포하는 경우 저작권법에 의해 처벌 받을 수 있습니다." />
                         </p>
                     </div>
                 </div>

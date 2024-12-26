@@ -6,7 +6,12 @@ type ResourceQuery = { not?: (string | RegExp)[] };
 const nextConfig: NextConfig = {
     reactStrictMode: true,
     images: {
-        domains: [process.env.NEXT_PUBLIC_S3_BUCKET_URL || ''],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'kr.object.ncloudstorage.com',
+            },
+        ],
     },
     webpack(config: Configuration) {
         const fileLoaderRule = config.module?.rules?.find((rule) => {

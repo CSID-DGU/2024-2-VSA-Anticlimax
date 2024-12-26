@@ -153,7 +153,7 @@ const HeaderSection = () => (
             <br />
             <TranslatedText text="또한, 급한건이시면 아래 메일로 보내주세요!" />
             <br />
-            contact@viewpam.com
+            contact@wooahan.com
         </p>
     </div>
 );

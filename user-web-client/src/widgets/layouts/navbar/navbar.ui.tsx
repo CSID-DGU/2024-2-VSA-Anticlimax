@@ -47,10 +47,10 @@ const Navbar = () => {
             label: <TranslatedText text="제휴 문의" />,
             link: '/coalition',
         },
-        {
-            label: <TranslatedText text="앱 다운로드" />,
-            link: '/app-download',
-        },
+        // {
+        //     label: <TranslatedText text="앱 다운로드" />,
+        //     link: '/app-download',
+        // },
         {
             label: currentLang === 'KOR' ? 'ENG' : 'KOR',
             onClick: handleLanguageToggle,
