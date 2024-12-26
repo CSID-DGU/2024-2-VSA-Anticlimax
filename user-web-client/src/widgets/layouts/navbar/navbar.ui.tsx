@@ -43,10 +43,10 @@ const Navbar = () => {
     ];
 
     const NavRightList: NavItem[] = [
-        {
-            label: <TranslatedText text="제휴 문의" />,
-            link: '/coalition',
-        },
+        // {
+        //     label: <TranslatedText text="제휴 문의" />,
+        //     link: '/coalition',
+        // },
         // {
         //     label: <TranslatedText text="앱 다운로드" />,
         //     link: '/app-download',

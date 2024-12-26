@@ -1,5 +1,5 @@
 import { TranslatedText } from '@shared/components/translated-text/translated-text.ui';
-import { IconInstagram, IconKakao, ViewpamLogo } from 'public/svgs';
+import { IconInstagram, IconKakao } from 'public/svgs';
 
 export default function Footer() {
     return (
@@ -28,11 +28,11 @@ export default function Footer() {
                 <div className="text-center text-sub3 leading-relaxed desktop:text-left">
                     <div className="flex flex-col gap-1">
                         <p>
-                            <TranslatedText text="회사명 : 우아한" />{' '}
+                            <TranslatedText text="단체명 : 우아한" />{' '}
                             <Separator />{' '}
-                            <TranslatedText text="대표자 : 손형준" />{' '}
+                            <TranslatedText text="대표자 : 서희찬" />{' '}
                             <Separator />{' '}
-                            <TranslatedText text="개인정보보호책임자 : 서희찬" />{' '}
+                            <TranslatedText text="개인정보보호책임자 : 손형준, 윤창섭" />{' '}
                         </p>
                         <p>
                             <TranslatedText text="*우아한에서 제공하는 모든 콘텐츠는 저작권법 보호를 받으며, 무단으로 복제 및 배포하는 경우 저작권법에 의해 처벌 받을 수 있습니다." />
